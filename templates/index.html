@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Authenticity Detection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 1em;
+        }
+
+        .title {
+            padding: 1em;
+            text-align: center;
+            color: #923D41;
+            font-size: 30px;
+        }
+
+        .antique-form {
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1em;
+        }
+
+        .image-input label {
+            color: #923D41;
+        }
+
+        .image-input input {
+            margin-left: 1em;
+        }
+
+        .upload-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1em;
+            padding: 0.5em;
+            border: none;
+            border-radius: 5px;
+            background-color: #923D41;
+            color: white;
+            font-size: 14px;
+            width: fit-content;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        Antique Verification System
+    </div>
+
+    <div class="container">
+    
+        <div class="antique-form">
+            <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="showLoadingSpinner()">
+
+                <div class="image-input">
+                    <label for="file">Choose an image:</label>
+                    <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png" required>
+                </div>
+                
+                <button type="submit" class="upload-button">Upload and Check</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

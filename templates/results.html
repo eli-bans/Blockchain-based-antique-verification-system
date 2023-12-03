@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Authenticity Results</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .output-result {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1em;
+        }
+
+        .title {
+            padding: 1em;
+            text-align: center;
+            color: #923D41;
+            font-size: 30px;
+        }
+
+        .result {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            padding: 1em;
+        }
+
+        .result-message {
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="output-result">
+        <div class="title" style="font-size: 25px;">
+            Image Authenticity Results
+        </div>
+        <div class="result">
+            {% if result == "Real" %}
+                <div class="image-result">
+                    <img src="{{ image_path }}" alt="Uploaded Image">
+                </div>
+                <div class="result-message">
+                    <div style="display: inline-block;">
+                        <span style="color: #923D41; font-weight: bold;">Classification Result: </span> 
+                        <span style="color: green;">{{ result }}</span>
+                    </div>
+                    <p>Image Hash: {{ file_hash }}</p>
+                </div>
+            {% else %}
+                <div class="image-result"></div>
+                <div class="result-message">
+                    <div style="display: inline-block;">
+                        <span style="color: #923D41; font-weight: bold;">Classification Result: </span> 
+                        <span style="color: red;">{{ result }}</span>
+                    </div>
+                    <p>This image is not authenticated as real, and no hash is provided.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
