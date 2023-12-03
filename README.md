@@ -1,5 +1,7 @@
 # Blockchain-based-antique-verification-system
 
+# https://youtu.be/IRB60VkzdFQ
+
 ## Overview
 
 This project implements an antique authenticity detection system,specifically images using a combination of a pre-trained convolutional neural network (VGG16) for feature extraction and a custom neural network for classification. The system can distinguish between real and AI-generated images.
